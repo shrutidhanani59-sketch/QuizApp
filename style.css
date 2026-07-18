@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper
+{
+    background:linear-gradient(to right , #35326c , #764BA2);
+    height: 100vh;
+    position: relative;
+}
+h2
+{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+}
+.timer
+{
+    background-color: #FF5E5E;
+    color: white;
+    padding: 10px;
+    width: 80px;
+    border-radius: 10px;
+   font-size: 20px;
+   font-weight: bold;
+   position: absolute;
+   top: 60px;
+   left: 32rem;  
+}
+.quaction{
+    background-color: #2D2B55;
+    color: white;
+    margin-top: 100px;
+   height: 230px;
+   width: 450px;
+   position: absolute;
+   left: 23rem;
+   top: 40px;
+  padding: 10px;
+  padding-top: 30px;
+  border-radius: 10px;
+  line-height: 30px;
+
+}
+
+.quaction:hover
+{
+    cursor: pointer;
+    
+}
+
+.options aside{
+    border: 1px solid transparent;
+    
+}
+
+.options aside:hover
+{
+    background-color: whitesmoke;
+  border-radius: 10px;
+  color: black;
+    
+}
+.btn{
+    background-color: #EEEEEE;
+    color: #444444;
+    border: none;
+    padding: 5px;
+    border-radius:5px ;
+
+}
+.Submit
+{
+    background-color: #2ECC71;
+    border: none;
+    padding: 5px;
+    border-radius:5px ;
+}
+form
+{
+   margin-top: 25rem;
+   display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.no-cursor{
+    cursor: not-allowed;
+}
+h1{
+    
+    background-color: #2D2B55;
+    width: 80px;
+    color: white;
+    border-radius: 15px;
+    padding: 3px;
+    position: absolute;
+    left: 45%;
+    top: 45%;
+    cursor: pointer;
+} 
+body
+{
+    background:linear-gradient(to right , #35326c , #764BA2);
+    height: 100vh;
+}
