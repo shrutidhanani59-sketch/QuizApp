@@ -89,6 +89,7 @@ form
 .no-cursor{
     cursor: not-allowed;
 }
+
 h1{
     
     background-color: #2D2B55;
@@ -106,3 +107,10 @@ body
     background:linear-gradient(to right , #35326c , #764BA2);
     height: 100vh;
 }
+
+/* .result
+{
+    display: none;
+    background:linear-gradient(to right , #35326c , #764BA2);
+    height: 100vh;
+} */

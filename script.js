@@ -1,6 +1,6 @@
 const quiz = [
   {
-    question: "What is JavaScript?",
+    question: " 1. What is JavaScript?",
     options: [
       "Programming Language",
       "Database",
@@ -11,7 +11,7 @@ const quiz = [
   },
 
   {
-    question: "Which keyword is used to declare a variable in JavaScript?",
+    question: " 2. Which keyword is used to declare a variable in JavaScript?",
     options: [
       "let",
       "int",
@@ -22,7 +22,7 @@ const quiz = [
   },
 
   {
-    question: "Which company developed JavaScript?",
+    question: " 3. Which company developed JavaScript?",
     options: [
       "Netscape",
       "Microsoft",
@@ -33,7 +33,7 @@ const quiz = [
   },
 
   {
-    question: "Which symbol is used for single-line comments?",
+    question: " 4. Which symbol is used for single-line comments?",
     options: [
       "//",
       "/* */",
@@ -44,7 +44,7 @@ const quiz = [
   },
 
   {
-    question: "Which method displays a message in an alert box?",
+    question: " 5. Which method displays a message in an alert box?",
     options: [
       "alert()",
       "prompt()",
@@ -55,7 +55,7 @@ const quiz = [
   },
 
   {
-    question: "Which method is used to print output in the browser console?",
+    question: " 6. Which method is used to print output in the browser console?",
     options: [
       "console.log()",
       "document.write()",
@@ -66,7 +66,7 @@ const quiz = [
   },
 
   {
-    question: "Which keyword is used to define a constant?",
+    question: " 7. Which keyword is used to define a constant?",
     options: [
       "const",
       "let",
@@ -77,7 +77,7 @@ const quiz = [
   },
 
   {
-    question: "Which operator is used for strict equality?",
+    question: " 8. Which operator is used for strict equality?",
     options: [
       "===",
       "==",
@@ -88,7 +88,7 @@ const quiz = [
   },
 
   {
-    question: "Which loop is guaranteed to execute at least once?",
+    question: " 9. Which loop is guaranteed to execute at least once?",
     options: [
       "do...while",
       "while",
@@ -99,7 +99,7 @@ const quiz = [
   },
 
   {
-    question: "Which method converts JSON data into a JavaScript object?",
+    question: " 10. Which method converts JSON data into a JavaScript object?",
     options: [
       "JSON.parse()",
       "JSON.stringify()",
@@ -113,9 +113,9 @@ const quiz = [
 var index = 0;
 var id;
 var second;
-var scroe = 0;
+var score = 0;
 var flag = false;
-var tempQuaction = [];
+var tempQuaction = 0;
 var skip = [];
 
 
@@ -138,6 +138,12 @@ function Timer(t1, t2) {
   }, t1)
 
   id = setInterval(() => {
+    if(second == 0)
+    {
+      clearInterval(id);
+      index++;
+      Quiz(index);
+    }
     document.querySelectorAll('.timer span')[1].innerText = `${second--}`;
   }, t2)
 }
@@ -146,7 +152,7 @@ function Quiz(index) {
   document.querySelectorAll('.timer span')[0].innerHTML = "01";
   document.querySelectorAll('.timer span')[1].innerText = "00";
 
-  if(index == quiz.length )
+  if(index >= quiz.length )
   {
     document.querySelector('.Submit').style.display = "none";
     return;
@@ -194,18 +200,26 @@ document.querySelector('.next').onclick = function (e) {
   clearInterval(id);
   skip.push(index);
   Quiz(++index);
-
+  // console.log(index);
+  
 }
 
 document.querySelector('.pre').onclick = function (e) {
   e.preventDefault();
+  clearInterval(id);
   Quiz(--index);
 
 }
 
+function result()
+{
+ document.querySelector('.wrapper').style.display="none";
+ document.querySelector('.result').style.display="block";
+ document.querySelector('.result').innerHTML = score;
+}
+
 document.querySelector('form').onsubmit = function (e) {
   e.preventDefault();
-  console.log(scroe);
   clearInterval(id);
 
   for (let i = 0; i < quiz[index].options.length; i++) {
@@ -214,15 +228,49 @@ document.querySelector('form').onsubmit = function (e) {
 
       if (e.target[i].value == quiz[index].answer) {
         console.log("right");
-        scroe++;
+        score++;
       }
     }
   }
+  
+    if(index == quiz.length-1)
+    {
 
-  for (const element of skip) {
-    console.log(element);
-    
-  }
+      flag = true
+      document.querySelector('.pre').style.visibility="hidden";
+      document.querySelector('.next').style.visibility="hidden";
+       if(skip.length-1 > tempQuaction)
+       {
+        index = skip[tempQuaction];
+       }
+       else
+       {
+        result();
+        return;
+       }
+
+      
+      Quiz(index);
+      return;
+    }
+   
+  if(flag)
+    {
+      if(skip.length-1 > tempQuaction)
+      {
+        tempQuaction++;
+      }
+      else
+       {
+        result();
+        return;
+       }
+      index = skip[tempQuaction];
+      Quiz(index);
+      return;
+    }
+
+  
   
   Quiz(++index);
 }
