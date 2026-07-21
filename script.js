@@ -213,7 +213,7 @@ document.querySelector('.pre').onclick = function (e) {
 // document.querySelector('.box').style.display="block";
 
 function result() {
-<<<<<<< HEAD
+
    
     document.querySelector('.wrapper').style.display = "none";
     document.querySelector('.result').style.display = "block";
@@ -234,20 +234,9 @@ function result() {
         <p> ❌ Wrong Question:  ${Wrong}</p>
         <p> 📈 score :  ${score}</p>
         <p> 📊Percentage :  ${Percentage}</p>
-        <p><b>👉 ${Percentage >= 40?' 🎉 Pass': ' 😔fail' } </b></p>
-             
-=======
-    document.querySelector('.wrapper').style.display = "none";
-    document.querySelector('.result').style.display = "block";
-    document.querySelector('.result').innerHTML = ` 
-        <div class="box">
-        <h3>Congratulations 🏆</h3><br>
-        score :  ${score}<br>
-        p      :
->>>>>>> be6a42cb32624b1fa20ebe38bd53adcb034e3248
-       </div>
- 
- `;
+        <p><b>👉 ${Percentage >= 40?' 🎉 Pass': ' 😔fail' } </b></p>`
+    
+    
 
 }
 
@@ -300,8 +289,4 @@ document.querySelector('form').onsubmit = function (e) {
 
 
     Quiz(++index);
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> be6a42cb32624b1fa20ebe38bd53adcb034e3248
