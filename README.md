@@ -44,4 +44,5 @@ screenshort2.png
 ![img2](imges/screenshort2.png)
 ![result](imges/result.png)
 
-## 
+## 🎬 video
+https://drive.google.com/file/d/1VzSISvTEmEGCeLQAPR8Tg-ujMMn8hXi7/view?usp=sharing
