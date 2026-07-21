@@ -92,25 +92,38 @@ form
 
 h1{
     
-    background-color: #2D2B55;
+    background-color: #050505;
     width: 80px;
     color: white;
     border-radius: 15px;
     padding: 3px;
     position: absolute;
     left: 45%;
-    top: 45%;
+    margin-top: 10%;
     cursor: pointer;
 } 
 body
 {
     background:linear-gradient(to right , #35326c , #764BA2);
-    height: 100vh;
+    height: 75vh;
 }
 
-/* .result
+.box
 {
-    display: none;
-    background:linear-gradient(to right , #35326c , #764BA2);
-    height: 100vh;
-} */
+    background-color: gainsboro;
+    box-shadow: 2px 2px 2px  rgb(0,0,0,0.3);
+    height: 350px;
+    width: 250px;
+    border-radius: 10px;
+    margin-top: -30px;
+    padding-left:30px;
+    padding-top: 10px;
+    
+}
+.result
+{
+    margin-left: 40%;
+    margin-top: 12%;
+    line-height: 30px;
+
+}
